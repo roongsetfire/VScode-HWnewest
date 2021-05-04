@@ -15,7 +15,7 @@
             
             
         </div>
-        <div class="settingConfigs">
+        <div class="settingConfigs" *ngIf='currenttab=="user"'>
             <h5>Commonly Used</h5>
             <app-config 
             [groupName]="'Files'" 
@@ -38,6 +38,27 @@
             [name]="'Tab Size'"
             [detail]="'The number of spaces a tab is equal to. This setting is overridden based on the file contents when Editor: Detect Indentation is on.'"
             [value]="'4'"></app-config>
+        </div>
+
+        <div class="settingConfigs" *ngIf='currenttab=="workspace"'>
+            <h5>Commonly Used</h5>
+            <app-config 
+            [groupName]="'Files'" 
+            [name]="'Auto Save'" 
+            [remark]="'(Modified in: User)'"
+            [detail]="'Controls auto save of dirty files. Read more about autosave here.'" 
+            [value]="'off'"></app-config>
+            <app-config 
+            [groupName]="'Editor:'" 
+            [name]="'Font Size'" 
+            [detail]="'Controls the font size in pixels.'" 
+            [value]="'12'"></app-config>
+            <app-config 
+            [groupName]="'Editor:'" 
+            [name]="'Font Family'" 
+            [detail]="'Controls the font family.'" 
+            [value]="'Consolas, \'Courier New\', monospace'"></app-config>
+            
         </div>
         
     </div>
